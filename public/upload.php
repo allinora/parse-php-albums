@@ -41,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 $targetDir = ini_get("upload_tmp_dir") . DIRECTORY_SEPARATOR . "plupload";
 
 // Changes by Atif Ghaffar
-include_once(__DIR__ . "/../bootstrap.php");
 
 $targetDir = __DIR__ . '/../tmp/uploads';
 $cleanupTargetDir = true; // Remove old files
@@ -124,11 +123,11 @@ if (!$chunks || $chunk == $chunks - 1) {
 	// Strip the temp .part suffix off 
 	rename("{$filePath}.part", $filePath);
 
-	include_once(ROOT . "/library/ParseApp/Albums.php");
+	include_once(__DIR__ . "/../vendor/autoload.php");
+	include_once(__DIR__ . "/../config/config.php");
+	include_once(__DIR__ . "/../library/ParseApp/Albums.php");
 	$parse = new ParseApp\Albums();
-	$parse->addPicture($filepath);
-	
-	$parse->addFile($filePath);
+	$parse->addPicture($_REQUEST['currentAlbum'], $filePath);
 }
 
 // Return Success JSON-RPC response
