@@ -60,8 +60,14 @@ class Albums {
 		return $album;
 	}
 	public function getAlbums(){
-		if (!empty($_SESSION['albums'])){
-			return $_SESSION['albums'];
+
+		 // This is really **bad** (bad practice example)
+		// I am nuking the whole albums object and getting a new one
+		// Better would be just clear the session/cache for that particular album
+		if (!$_REQUEST['refresh'] == 1) {
+			if (!empty($_SESSION['albums'])){
+				return $_SESSION['albums'];
+			}
 		}
 		$user = ParseUser::getCurrentUser();
 		
