@@ -28,19 +28,11 @@ class IndexController extends BaseController {
 		$this->redirect("index", "index");
 	}
 
-	function getAlbumsAction(){
-		$this->render=0;
-		$albums = $this->backend->getAlbums();
-		foreach ($albums as $album){
-			$name = $album->get("name");
-			print "Name: $name<br>";
-			print "ID: " . $album->getObjectId() . "<br>";
-			print "<br>";
-		}
-	}
-	
+
 	function showAlbumAction($id = null){
 		$this->set("currentAlbum", $id);
+		$_SESSION['currentAlbum'] = $id;
+		
  		$album = $_SESSION['albums'][$id];
 		$pictures_json = $album->get("pictures");
 		if (!empty($pictures_json)){
@@ -51,8 +43,7 @@ class IndexController extends BaseController {
 	
 	function testFileAction(){
 		$this->render=0;
-		$this->backend->addPicture('0chVWGqNhB', "/Users/aghaffar/www.gallery.atiftest.info/albums/Arno/HPIM0937.jpg");
-		$this->backend->addPicture('0chVWGqNhB', "/Users/aghaffar/www.gallery.atiftest.info/albums/Arno/atif_arno6.jpg");
+		$this->backend->addPicture('0chVWGqNhB', "/tmp/Arno+Lila.png");
 	}
 
 }
