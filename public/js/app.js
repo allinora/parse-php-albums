@@ -23,7 +23,15 @@ $(function() {
 		url : _upload_url,
 
 		complete : function(){
-			self.location = self.location;
+			var _newURL = self.location;
+			
+			if (_newURL.href.indexOf('?') == -1){
+				_newURL +=  '?refresh=1';
+			} else {
+				_newURL += '&refresh=1';
+			}
+			
+			self.location = _newURL;
 
 		},
 		
