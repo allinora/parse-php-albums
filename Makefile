@@ -17,5 +17,8 @@ clean:
 	find . -type f -name ".DS_Store" -exec rm {} \;
 	rm -rf tmp/uploads tmp/cache tmp/logs tmp/sessions tmp/smarty_compile tmp/smarty_cache
 
+distclean: clean
+	rm -rf vendor composer.lock
+
 run:
 	php -S 0.0.0.0:8080 -t public
