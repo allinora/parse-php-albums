@@ -12,11 +12,21 @@ $(function() {
 
 // Initialize the widget when the DOM is ready
 $(function() {
+	_upload_url = '/upload.php';
+	if (window.currentAlbum != "undefined"){
+		_upload_url += '?currentAlbum=' + window.currentAlbum;
+	}
+	
 	$("#uploader").plupload({
 		// General settings
 		runtimes : 'html5,flash,silverlight,html4',
-		url : '/upload.php',
+		url : _upload_url,
 
+		complete : function(){
+			self.location = self.location;
+
+		},
+		
 
 		// User can upload no more then 200 files in one go (sets multiple_queues to false)
 		max_file_count: 200,
