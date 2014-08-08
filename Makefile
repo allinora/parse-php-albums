@@ -5,6 +5,8 @@ install:
 	mkdir -p tmp/uploads tmp/cache tmp/logs tmp/sessions tmp/smarty_compile tmp/smarty_cache
 	chmod -R 777 tmp/uploads tmp/cache tmp/logs tmp/sessions tmp/smarty_compile
 	php bin/composer.phar install
+	@test -f config/config.php || (cp config/config.template.php config/config.php  && echo Configuration file is config/config.php. Please edit it with your Parse informations)
+
 
 clean:
 	rm -rf tmp
