@@ -69,8 +69,8 @@ class Albums {
 		$query = new ParseQuery("Albums");
 		$query->equalTo("user", $user);
 		$albums = $query->find();
+		$_SESSION['albums'] = array();
 		foreach($albums as $album){
-			$_SESSION['albums'] = array();
 			$_SESSION['albums'][$album->getObjectId()] = $album;
 		}
 		return $albums;
@@ -78,7 +78,8 @@ class Albums {
 	}
 	
 	
-	function addPicture($album_id='0chVWGqNhB', $path){
+	function addPicture($album_id, $path){
+		print "Writting to $album_id<br>";
 		$query = new ParseQuery("Albums");
 	  	$album = $query->get($album_id);
 		$filedata = $this->addFile($path);
