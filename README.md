@@ -3,21 +3,29 @@ Parse PHP Albums
 
 Example app to test and demostrate the PHP-SDK for parse.com backend
 
-The goal is to use as much capabilities of Parse.com as the SDK can provide.
-
-This app is for a photo album site where logged in users can create albums and add photos.
-
-The app should touch the following features.
-
-0. Signup
-0. Login
-0. Session
-0. Caching
-
 Authors
 -------
 
 - [Atif ghaffar](http://atif.ghaffar@gmail.com)
+
+About
+------
+
+The goal is to use as much capabilities of Parse.com as the SDK can provide. This will help to both demonstrate the usage and to help find bugs.
+
+This app is for a photo album site where logged in users can create albums and add photos. Other users can see and comment on photos.
+
+The app should touch the following features.
+
+0. Signup  
+0. Login
+0. Session
+0. Caching
+0. Parse Files ( to store images )
+0. Parse Objects ( to create buckets, albums, etc)
+0. Object relations (pictures belong to albums, albums belong to users, comments belong to users and pictures, etc)
+0. Eventually Roles to have albums shared with multiple users
+
 
 Installation
 ------------
