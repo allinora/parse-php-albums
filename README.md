@@ -53,7 +53,7 @@ Browse on localhost:8080
 
 Developers
 -----------
-Almost all the Parse-SDK  functions are in [library/ParseApp/Albums.php (https://github.com/allinora/parse-php-albums/blob/master/library/ParseApp/Albums.php)] 
+Almost all the Parse-SDK  functions are in library/ParseApp/Albums.php https://github.com/allinora/parse-php-albums/blob/master/library/ParseApp/Albums.php
 
 Bug reporting
 -------------
