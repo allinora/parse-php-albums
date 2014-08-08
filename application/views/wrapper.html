@@ -23,7 +23,11 @@
 <link rel="stylesheet" href="/css/dashboard.css">
 
 
-
+<{if $currentAlbum}>
+<script>
+	window.currentAlbum = '<{$currentAlbum}>';
+</script>
+<{/if}>
 
 		
 	
@@ -76,8 +80,6 @@
 				<div id="uploader">
 					<p>Your browser doesn't have Flash, Silverlight or HTML5 support.</p>
 				</div>
-				<br />
-				<input type="submit" value="Submit" />
 			</form>
 			<{else}>
 			Please select an album to view the pictures.
