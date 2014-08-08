@@ -8,6 +8,26 @@ Authors
 
 - [Atif ghaffar](http://atif.ghaffar@gmail.com)
 
+Installation
+------------
+Clone from git into a directory called parse-php-albums
+
+	git clone git@github.com:allinora/parse-php-albums.git
+	
+Install the dependencies
+
+	cd parse-php-albums
+	make install
+
+Edit the parse-php-albums/config/config.php and replace values in  the PARSE constants
+
+Run the application
+	
+	make run
+	
+Browse on localhost:8080
+
+
 
 License
 -------
