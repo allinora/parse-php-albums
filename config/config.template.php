@@ -4,6 +4,9 @@
 // define ROOT. One level before this directory
 define('ROOT', dirname(__DIR__));
 
+// defined shortcut to DIRECTORY_SEPARATOR
+define('DS', DIRECTORY_SEPARATOR);
+
 // Name of the project. 
 define ('PROJECT_NAME','parsealbums');
 
