@@ -126,6 +126,8 @@ if (!$chunks || $chunk == $chunks - 1) {
 
 	include_once(ROOT . "/library/ParseApp/Albums.php");
 	$parse = new ParseApp\Albums();
+	$parse->addPicture($filepath);
+	
 	$parse->addFile($filePath);
 }
 
