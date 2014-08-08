@@ -1,0 +1,21 @@
+<script>
+	function gotoStory(id){
+		self.location="/en/stories/show/"+id;
+	}
+</script>
+<style>
+	.story {
+		cursor: pointer;
+	}
+</style>
+
+
+<div class="row-fluid">
+<{foreach from=$storiesList item=row}>
+            <div onclick="gotoStory(<{$row.id}>)" class="span4 story">
+				<img src="<{$row.url}>">
+              	<center><h4><{$row.title}></h4></center>
+				<center><i><{$row.date}> by <{$row.author}></i></center>
+            </div>
+<{/foreach}>
+</div>

@@ -1,5 +1,8 @@
 {
   "require": {
-    "parse/php-sdk" : "1.0.*"
+    "parse/php-sdk" : "1.0.*",
+ 	"cocur/slugify" : "@stable",
+ 	"smarty/smarty" : "@stable"
+
   }
 }
