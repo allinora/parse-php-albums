@@ -28,6 +28,10 @@ Run the application
 Browse on localhost:8080
 
 
+Bug reporting
+-------------
+Please report in the issue tracker at https://github.com/allinora/parse-php-albums/issues
+
 
 License
 -------
