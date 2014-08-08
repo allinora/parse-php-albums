@@ -1,5 +1,31 @@
 <?php	
-ini_set("display_errors", "On");
+define('DS', DIRECTORY_SEPARATOR);
+
+
+// Timezone: Set it to your timezone
+date_default_timezone_set("Europe/Zurich"); 
+
+// Do not autostart session
+ini_set("session.auto_start", "Off");
+
+// Session path: Change is according to your liking or just remove it if you are using some other session management
+ini_set("session.save_path", dirname(__DIR__) . DS . "tmp" . DS . "sessions");
+
+// Load the compose autoload
+require_once (dirname(__DIR__) . DS . 'vendor' . 	DS . 'autoload.php');
+
+
+// Start the session. Note the session should be started after loading the vendor/autoload.php
+session_start();
+
+// Get the url so that it can be passed to the framework
+@list($url, $params) = explode('?', $_SERVER["REQUEST_URI"], 2);   // Get the url
+
+// Run the framework
+$framework = new Allinora\Simple\Framework($url);
+
+
+// Utility functions
 
 // Do something before the framework is called
 function _app_preHook(){
@@ -11,20 +37,3 @@ function _app_contentHook($_content){
 	//For example pass it via tidy or do translations
 	return $_content;
 }
-
-require_once (dirname(__FILE__) . '/../bootstrap.php');
-
-// Cleanup the URL and handle special cases that should be handled outside.
-
-@list($url, $params) = explode('?', $_SERVER["REQUEST_URI"], 2);   // Just get everything before t
-// Special handling for "cache"; 
-if (substr($url, 1, 5) == "cache"){
-	$url = substr($url, 6);
-	$_SERVER["REQUEST_URI"] = $url;
-}
-if (in_array(substr($url, 1), array("favicon.ico", "robots.txt", "sitemap.xml")) ){
-	die("This url should not be handled here");
-}
-
-$framework = new Allinora\Simple\Framework($url);
-
