@@ -1,5 +1,6 @@
 <h1>Pictures</h1>
 <{foreach from=$aPictures item=picture}>
-<img src='<{$picture->url}>' title="<{$picture->name}>" style="max-height: 200px">
-<br>
+	<div class="col-xs-3" style = 'border: 1px solid black; min-width: 200px; min-height: 230px'>
+		<img src='<{$picture->url}>' title="<{$picture->name}>" style="max-height: 200px;">
+	</div>
 <{/foreach}>
