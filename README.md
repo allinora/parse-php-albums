@@ -8,12 +8,17 @@ Authors
 
 - [Atif ghaffar](http://atif.ghaffar@gmail.com)
 
+Contributors
+------------
+
+- [You: Just add your name here when you contribute something]
+
 About
 ------
 
-The goal is to use as much capabilities of Parse.com as the SDK can provide. This will help to both demonstrate the usage and to help find bugs.
+The goal is to use as much capabilities of Parse.com as the SDK can provide. This will help to both demonstrate the usage and to find bugs.
 
-This app is for a photo album site where logged in users can create albums and add photos. Other users can see and comment on photos.
+This web application is for a photo album site where registered  users can create albums and add photos. Other users can see and comment on photos.
 
 The app should touch the following features.
 
