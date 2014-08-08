@@ -36,7 +36,7 @@ Installation
 ------------
 Clone from git into a directory called parse-php-albums
 
-	git clone git@github.com:allinora/parse-php-albums.git
+	git clone https://github.com/allinora/parse-php-albums.git
 	
 Install the dependencies
 
