@@ -74,10 +74,19 @@ class Albums {
 		
 	}
 	
-	function addPicture($album_id, $path){
+	
+	function addPicture($album_id='0chVWGqNhB', $path){
 		$query = new ParseQuery("Albums");
 	  	$album = $query->get($album_id);
 		$filedata = $this->addFile($path);
+		
+		
+		// This is a hack
+		// 1. Get all pictures of the album (json_encoded string)
+		// 2. json_decode it to get an array
+		// 3. Add a new picture to the array
+		// 4. json_encode it to a string
+		// 5. set is as a string to the field called pictures
 		
 		$pictures = $album->get("pictures");
 		if (!empty($pictures)){
@@ -89,8 +98,6 @@ class Albums {
 		$album->set("pictures", $pictures);
 		
 		$album->save();
-		
-		print "<pre>" . print_r($album, true) . "</pre>";
 	}
 	
 	public function addFile($path){
