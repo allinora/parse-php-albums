@@ -41,16 +41,12 @@ class IndexController extends BaseController {
 	
 	function showAlbumAction($id = null){
 		$this->set("currentAlbum", $id);
-		
-		$this->render=0;
-		$albums = $this->backend->getAlbums();
-		foreach ($albums as $album){
-			$name = $album->get("name");
-			print "Name: $name<br>";
-			print "ID: " . $album->getObjectId() . "<br>";
-			print "<br>";
+ 		$album = $_SESSION['albums'][$id];
+		$pictures_json = $album->get("pictures");
+		if (!empty($pictures_json)){
+			$aPictures = json_decode($pictures_json);
 		}
-		
+		$this->set('aPictures', $aPictures);
 	}
 	
 	function testFileAction(){

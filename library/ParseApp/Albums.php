@@ -69,7 +69,10 @@ class Albums {
 		$query = new ParseQuery("Albums");
 		$query->equalTo("user", $user);
 		$albums = $query->find();
-		$_SESSION['albums'] = $albums;
+		foreach($albums as $album){
+			$_SESSION['albums'] = array();
+			$_SESSION['albums'][$album->getObjectId()] = $album;
+		}
 		return $albums;
 		
 	}

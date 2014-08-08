@@ -1,0 +1,5 @@
+<h1>Pictures</h1>
+<{foreach from=$aPictures item=picture}>
+<img src='<{$picture->url}>' title="<{$picture->name}>" style="max-height: 200px">
+<br>
+<{/foreach}>
