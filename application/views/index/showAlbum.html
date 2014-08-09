@@ -1,6 +1,30 @@
 <h1>Pictures</h1>
-<{foreach from=$aPictures item=picture}>
-	<div class="col-xs-3" style = 'border: 1px solid black; min-width: 200px; min-height: 230px'>
-		<img src='<{$picture->url}>' title="<{$picture->name}>" style="max-height: 200px;">
-	</div>
-<{/foreach}>
+<style>
+/*  based on http://osvaldas.info/flexbox-based-responsive-equal-height-blocks-with-javascript-fallback  */
+
+.list{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+ 
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.list__item {
+	border: 1px solid silver;
+	padding: 10px;
+	margin: 10px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+</style>
+
+<ul class="list">
+	<{foreach from=$aPictures item=picture}>
+		    <li class="list__item"><img src='<{$picture->url}>' title="<{$picture->name}>" style="max-height: 200px;"></li>
+	<{/foreach}>
+</ul>
+
+
